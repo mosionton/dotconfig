@@ -41,7 +41,4 @@ vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
 vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- Float terminal
-vim.keymap.set("n", "<Leader><Leader>t", "<cmd>Lspsaga open_floaterm `$SHELL`<CR>", opts)
-
--- close floaterm
-vim.keymap.set("t", "<Leader><Leader>t", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)
+vim.keymap.set("n", "<Leader><Leader>t", "<cmd>Lspsaga term_toggle<CR>", opts)
