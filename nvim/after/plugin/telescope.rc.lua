@@ -71,6 +71,10 @@ vim.keymap.set('n', ';s', function()
   builtin.treesitter()
 end)
 
+vim.keymap.set('n', 'sg', function()
+  builtin.spell_suggest()
+end)
+
 
 
 vim.keymap.set("n", "sf", function()

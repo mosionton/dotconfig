@@ -3,12 +3,15 @@ if type -q exa
   alias lla "ll -a"
 end
 
-set -xg CI_COMMIT_REF_NAME clyde
-set -xg CI_COMMIT_SHORT_SHA clyde
+
 # homebrew
-set -gx HOMEBREW_PREFIX "/home/clyde/homebrew";
-set -gx HOMEBREW_CELLAR "/home/clyde/homebrew/Cellar";
-set -gx HOMEBREW_REPOSITORY "/home/clyde/homebrew";
-set -q PATH; or set PATH ''; set -gx PATH "/home/clyde/homebrew/bin" "/home/clyde/homebrew/sbin" $PATH;
-set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/home/clyde/homebrew/share/man" $MANPATH;
-set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/home/clyde/homebrew/share/info" $INFOPATH;
+set -gx HOMEBREW_PREFIX "$HOME/homebrew";
+set -gx HOMEBREW_CELLAR "$HOME/homebrew/Cellar";
+set -gx HOMEBREW_REPOSITORY "$HOME/homebrew";
+set -q PATH; or set PATH ''; set -gx PATH "$HOME/homebrew/bin" "$HOME/homebrew/sbin" $PATH;
+set -q MANPATH; or set MANPATH ''; set -gx MANPATH "$HOME/homebrew/share/man" $MANPATH;
+set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "$HOME/homebrew/share/info" $INFOPATH;
+
+# # proxy
+# set -gx https_proxy http://10.218.0.139:7890
+# set -gx http_proxy http://10.218.0.139:7890

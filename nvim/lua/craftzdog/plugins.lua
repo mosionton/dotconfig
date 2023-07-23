@@ -13,19 +13,19 @@ packer.startup(function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use 'nvim-lualine/lualine.nvim' -- Statusline
-  use 'nvim-lua/plenary.nvim' -- Common utilities
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'simrat39/rust-tools.nvim' --nvim rust-tools
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use 'nvim-lua/plenary.nvim'     -- Common utilities
+  use 'onsails/lspkind-nvim'      -- vscode-like pictograms
+  use 'simrat39/rust-tools.nvim'  --nvim rust-tools
+  use 'hrsh7th/cmp-nvim-lsp'      -- nvim-cmp source for neovim's built-in LSP
 
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
   use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'neovim/nvim-lspconfig' -- LSP
+  use 'hrsh7th/nvim-cmp'                -- Completion
+  use 'neovim/nvim-lspconfig'           -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
@@ -55,4 +55,10 @@ packer.startup(function(use)
   -- use 'lewis6991/spellsitter.nvim'
 
   use 'numToStr/Comment.nvim'
+
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)

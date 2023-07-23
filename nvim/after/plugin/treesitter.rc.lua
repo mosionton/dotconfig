@@ -15,7 +15,13 @@ ts.setup {
     "json",
     "yaml",
     "lua",
-    "rust"
+    "rust",
+    "markdown",
+    "markdown_inline",
+    "cpp",
+    "c",
+    "python",
+    "go"
   },
   autotag = {
     enable = true,
