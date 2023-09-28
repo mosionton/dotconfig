@@ -30,7 +30,7 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'nvimdev/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip'
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -48,7 +48,6 @@ packer.startup(function(use)
   --  run = function() vim.fn["mkdp#util#install"]() end,
   -- })
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
@@ -56,9 +55,36 @@ packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
+  use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
 
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use 'folke/neodev.nvim'
+
+  -- use 'github/copilot.vim'
+  -- use 'hrsh7th/cmp-copilot'
+
+  use { "ibhagwan/fzf-lua",
+    -- optional for icon support
+    requires = { "nvim-tree/nvim-web-devicons" }
+  }
+
+
+
+  -- Chat GPT
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   })
 end)
