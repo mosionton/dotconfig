@@ -12,6 +12,3 @@ set -q PATH; or set PATH ''; set -gx PATH "$HOME/homebrew/bin" "$HOME/homebrew/s
 set -q MANPATH; or set MANPATH ''; set -gx MANPATH "$HOME/homebrew/share/man" $MANPATH;
 set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "$HOME/homebrew/share/info" $INFOPATH;
 
-# # proxy
-# set -gx https_proxy http://10.218.0.139:7890
-# set -gx http_proxy http://10.218.0.139:7890

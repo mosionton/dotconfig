@@ -68,6 +68,77 @@ packer.startup(function(use)
   -- use 'github/copilot.vim'
   -- use 'hrsh7th/cmp-copilot'
 
+  use {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  }
+  use { "ibhagwan/fzf-lua",
+    -- optional for icon support
+    requires = { "nvim-tree/nvim-web-devicons" }
+  }
+
+
+  use "potamides/pantran.nvim"
+
+  use 'antonk52/bad-practices.nvim'
+  use 'rcarriga/nvim-notify'
+  use 'esensar/nvim-dev-container'
+
+  -- Chat GPT
+  -- use({
+  --   "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- })
+
+  -- use({ "m4xshen/hardtime.nvim", requires = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" } })
+
+  use({ "saecki/crates.nvim", tag = "stable" })
+
+  use({
+    "alanfortlink/blackjack.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
+
+  -- diffview
+  use "sindrets/diffview.nvim"
+
+  use "luukvbaal/statuscol.nvim"
+
+  use {
+    "Exafunction/codeium.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  }
+
+  use 'folke/neodev.nvim'
+
+  -- use 'github/copilot.vim'
+  -- use 'hrsh7th/cmp-copilot'
+
   use { "ibhagwan/fzf-lua",
     -- optional for icon support
     requires = { "nvim-tree/nvim-web-devicons" }

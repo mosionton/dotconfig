@@ -25,14 +25,16 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
-    { name = "copilot" },
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'path' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim_lua' },
+    { name = "copilot",                 group_index = 3 },
+    { name = "codeium",                 group_index = 2 },
+    { name = 'nvim_lsp',                group_index = 1 },
+    { name = 'buffer',                  group_index = 1 },
+    { name = 'path',                    group_index = 1 },
+    { name = 'nvim_lsp_signature_help', group_index = 1 },
+    { name = 'nvim_lua',                group_index = 1 },
     { name = 'vsnip' },
     { name = 'calc' },
+    { name = 'crates' },
 
   }),
   window = {
@@ -47,6 +49,8 @@ cmp.setup({
         vsnip = '⋗',
         buffer = 'Ω',
         path = '🖫',
+        Codeium = "",
+        copilot = "",
       }
       item.menu = menu_icon[entry.source.name]
       return item

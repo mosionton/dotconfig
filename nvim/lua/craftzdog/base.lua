@@ -6,7 +6,7 @@ vim.o.relativenumber = false
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
-
+vim.opt.fileformat = 'unix'
 
 vim.wo.number = true
 
@@ -33,6 +33,7 @@ vim.opt.wrap = false         -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
+
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])

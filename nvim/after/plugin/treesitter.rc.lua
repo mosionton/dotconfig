@@ -21,7 +21,14 @@ ts.setup {
     "cpp",
     "c",
     "python",
-    "go"
+    "go",
+    "jsonc",
+    "fish",
+    "cmake",
+    "diff",
+    "dockerfile",
+    "xml",
+    "sql",
   },
   autotag = {
     enable = true,

@@ -156,6 +156,8 @@ rt.setup({
       vim.keymap.set("n", "<Leader>ha", rt.hover_actions.hover_actions, { buffer = bufnr })
       -- Code action groups
       vim.keymap.set("n", "<Leader>ca", rt.code_action_group.code_action_group, { buffer = bufnr })
+      -- Runnables
+      vim.keymap.set("n", "<Leader>rn", rt.runnables.runnables, { buffer = bufnr })
     end,
     settings = {
       ['rust-analyzer'] = {
@@ -279,6 +281,35 @@ nvim_lsp.ansiblels.setup {
 
 
 nvim_lsp.bashls.setup {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end
+}
+
+nvim_lsp.ansiblels.setup {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end
+}
+
+-- nvim_lsp.perlnavigator.setup {
+--   capabilities = capabilities,
+--   on_attach = function(client, bufnr)
+--     on_attach(client, bufnr)
+--     enable_format_on_save(client, bufnr)
+--   end,
+--   settings = {
+--     perlnavigator = {
+--       perlPath = '/usr/bin/perl'
+--     }
+--   }
+-- }
+--
+nvim_lsp.sqlls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
